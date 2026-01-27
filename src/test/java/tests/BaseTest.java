@@ -29,6 +29,7 @@ public class BaseTest {
         loginPage = new LoginPage(driver);
         productsPage = new ProductsPage(driver);
     }
+
     @AfterMethod
     public void closeBrowser() {
         driver.quit();

@@ -9,7 +9,6 @@ public class LoginPage extends BasePage {
     private final By loginButton = By.cssSelector("[name='login-button']");
     private final By errorMsg = By.cssSelector("[data-test='error']");
 
-
     public LoginPage(WebDriver driver) {
         super(driver);
     }
@@ -17,7 +16,6 @@ public class LoginPage extends BasePage {
     public void open() {
         driver.get(BASE_URL);
     }
-
 
     public void login(String user, String password) {
         driver.findElement(loginInput).sendKeys(user);
@@ -28,9 +26,8 @@ public class LoginPage extends BasePage {
     public boolean isErrorDisplayed() {
         return driver.findElement(errorMsg).isDisplayed();
     }
+
     public String getErrorText() {
         return driver.findElement(errorMsg).getText();
     }
-
-
 }
