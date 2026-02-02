@@ -6,14 +6,13 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertTrue;
 import static org.testng.Assert.assertEquals;
 
-public class LoginTest extends BaseTest {
+public class TestLogin extends BaseTest {
     @Test(invocationCount = 1, priority = 2, enabled = true)
     public void correctLogin() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
 
         assertTrue(productsPage.isTitleIsDisplayed(), "Заголовок не виден");
-        //  assertEquals(productsPage.getTitle(), "Products", "Не верный заголовок");
     }
 
     @DataProvider(name = "incorrectLoginData")
