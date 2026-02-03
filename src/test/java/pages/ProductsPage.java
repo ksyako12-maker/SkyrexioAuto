@@ -25,7 +25,6 @@ public class ProductsPage extends BasePage {
     }
 
     public void addGoodsToCart(int goodsIndex) {
-
         driver.findElements(By.xpath("//*[text()='Add to cart']")).get(goodsIndex).click();
     }
 
