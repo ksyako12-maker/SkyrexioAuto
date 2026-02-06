@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.testng.Assert.*;
+import static user.UserFactory.withAdminPermission;
 
 public class ProductsTest extends BaseTest {
     List<String> goodsList = new ArrayList<>(
@@ -15,8 +16,10 @@ public class ProductsTest extends BaseTest {
 
     @Test
     public void checkGoodsAdded() {
+        System.out.println("ProductsTest.correct !!!!! in tread: " + Thread.currentThread().getId());
+
         loginPage.open();
-        loginPage.login("standard_user", "secret_sauce");
+        loginPage.login(withAdminPermission());
         assertTrue(productsPage.isTitleIsDisplayed());
         assertEquals(productsPage.checkTitleName(), "Products");
         for (int i = 0; i < goodsList.size(); i++) {

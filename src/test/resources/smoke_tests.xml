@@ -1,0 +1,11 @@
+<suite name="SkyrexioAuto" parallel="classes" thread-count="2">
+
+    <test name="All tests">
+        <classes>
+            <class name="tests.LoginTest"/>
+            <class name="tests.ProductsTest"/>
+            <class name="tests.CartTest"/>
+        </classes>
+
+    </test> <!--  Test  -->
+</suite>
