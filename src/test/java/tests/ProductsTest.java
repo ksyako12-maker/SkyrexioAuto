@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static enums.TitleNaming.PRODUCTS;
 import static org.testng.Assert.*;
 import static user.UserFactory.withAdminPermission;
 
@@ -16,12 +17,12 @@ public class ProductsTest extends BaseTest {
 
     @Test
     public void checkGoodsAdded() {
-        System.out.println("ProductsTest.correct !!!!! in tread: " + Thread.currentThread().getId());
+        System.out.println("ProductsTest.correct !!!!! in tread: " + Thread.currentThread().threadId());
 
         loginPage.open();
         loginPage.login(withAdminPermission());
         assertTrue(productsPage.isTitleIsDisplayed());
-        assertEquals(productsPage.checkTitleName(), "Products");
+        assertEquals(productsPage.checkTitleName(), PRODUCTS.getDisplayName());
         for (int i = 0; i < goodsList.size(); i++) {
             productsPage.addGoodsToCart(goodsList.get(i));
         }
