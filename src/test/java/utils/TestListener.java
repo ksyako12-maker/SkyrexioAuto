@@ -10,7 +10,6 @@ import org.testng.ITestResult;
 
 import java.util.concurrent.TimeUnit;
 
-
 public class TestListener implements ITestListener {
 
     @Override
@@ -60,4 +59,3 @@ public class TestListener implements ITestListener {
         return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
     }
 }
-
