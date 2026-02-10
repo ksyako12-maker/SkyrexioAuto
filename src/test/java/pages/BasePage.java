@@ -23,5 +23,4 @@ public abstract class BasePage {
     public String checkTitleName() {
         return driver.findElement(title).getText();
     }
-
 }
